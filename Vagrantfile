@@ -5,10 +5,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/xenial64"
 
-  if Vagrant.has_plugin?("vagrant-cachier")
-     config.cache.scope = :box
-  end
-
   config.vm.provider "virtualbox" do |vb|
      vb.gui = true
      vb.memory = "512"
@@ -23,6 +19,5 @@ Vagrant.configure("2") do |config|
      web_config.vm.provision "shell", path: "./provisioner.sh",
        run: "always"
   end
-
 
 end
