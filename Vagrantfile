@@ -20,4 +20,12 @@ Vagrant.configure("2") do |config|
        run: "always"
   end
 
+  config.vm.provider :aws do |aws, override|
+     aws.access_key_id = ""
+     aws.secret_access_key = ""
+     aws.keypair_name = "demo_vagrant"
+     aws.ami = ""
+     aws.user_data = ""
+  end
+
 end
