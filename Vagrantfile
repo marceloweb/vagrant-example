@@ -26,6 +26,11 @@ Vagrant.configure("2") do |config|
      aws.keypair_name = "demo_vagrant"
      aws.ami = ""
      aws.user_data = ""
+     aws.subnet_id = ""
+     aws.elastic_ip = true
+     override.vm.box = "dummy"
+     override.ssh.username = "vagrant"
+     override.ssh.private_key_path = ""
   end
 
 end
